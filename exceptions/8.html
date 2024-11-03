@@ -1,0 +1,58 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>W3Schools Inspired Website</title>
+    <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+    <header>
+        <h1>Java Programs</h1>
+        <nav>
+            <ul>
+                <li><a href="../2D Array/2darray.html">2D Array</a></li>
+                    <li><a href="../applet/applet.html">Applet</a></li>
+                    <li><a href="../basic programs/basic.html">Basic Programs</a></li>
+                    <li><a href="../data conversion/data_conversion.html">Data Conversion</a></li>
+                    <li><a href="../event model/event.html">Event Model</a></li>
+                    <li><a href="../exceptions/excption.html">Exceptions</a></li>
+                    <li><a href="../functions/function.html">Functions</a></li>
+                    <li><a href="../GUI(AWT)/gui.html">GUI(AWT)</a></li>
+                    <li><a href="../inheritance/inheritance.html">Inheritance</a></li>
+                    <li><a href="../input-output/io.html">I/O</a></li>
+                    <li><a href="../interface/interface.html">Interface</a></li>
+                    <li><a href="../jdbc/jdbc.html">JDBC</a></li>
+                    <li><a href="../MultiThreading/mt.html">MultiThreading</a></li>
+                    <li><a href="../oops/oops.html">OOPs</a></li>
+                    <li><a href="../packages/packages.html">Package</a></li>
+                    <li><a href="../single array/sa.html">Single Array</a></li>
+                    <li><a href="../strings/string.html">Strings</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <code><pre>
+
+import java.sql.*;
+
+class EH8 {
+    public static void main(String[] args) {
+        try {
+            Class.forName("com.mysql.cj.jdbc.Driver");
+            Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/BCA", "root", "root");
+            System.out.println("Connected to database successfully!");
+        } catch (SQLException e) {
+            System.out.println("Error connecting to database: " + e.getMessage());
+        } catch (ClassNotFoundException e) {
+            System.out.println("Error loading JDBC driver: " + e.getMessage());
+        }
+    }
+}
+</pre></code><img src="8output.png" alt="output image"> </main>
+    <footer>
+        <p>Tanu Joshi</p>
+    </footer>
+</body>
+</html>

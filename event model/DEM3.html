@@ -1,0 +1,95 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>W3Schools Inspired Website</title>
+    <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+    <header>
+        <h1>Java Programs</h1>
+        <nav>
+            <ul>
+                <li><a href="../2D Array/2darray.html">2D Array</a></li>
+                    <li><a href="../applet/applet.html">Applet</a></li>
+                    <li><a href="../basic programs/basic.html">Basic Programs</a></li>
+                    <li><a href="../data conversion/data_conversion.html">Data Conversion</a></li>
+                    <li><a href="../event model/event.html">Event Model</a></li>
+                    <li><a href="../exceptions/excption.html">Exceptions</a></li>
+                    <li><a href="../functions/function.html">Functions</a></li>
+                    <li><a href="../GUI(AWT)/gui.html">GUI(AWT)</a></li>
+                    <li><a href="../inheritance/inheritance.html">Inheritance</a></li>
+                    <li><a href="../input-output/io.html">I/O</a></li>
+                    <li><a href="../interface/interface.html">Interface</a></li>
+                    <li><a href="../jdbc/jdbc.html">JDBC</a></li>
+                    <li><a href="../MultiThreading/mt.html">MultiThreading</a></li>
+                    <li><a href="../oops/oops.html">OOPs</a></li>
+                    <li><a href="../packages/packages.html">Package</a></li>
+                    <li><a href="../single array/sa.html">Single Array</a></li>
+                    <li><a href="../strings/string.html">Strings</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <code><pre>
+import java.awt.*;
+import java.awt.event.*;
+public class DEM3 extends Frame implements ActionListener {
+Button displayButton;    
+Image image;
+      
+public void actionPerformed(ActionEvent e) {
+              
+image = Toolkit.getDefaultToolkit().getImage("C:\Users\Nayan joshi\OneDrive\Pictures\WhatsApp Image 2023-11-02 at 08.35.38_abb266fb.jpg");      
+repaint();
+    
+}
+
+      
+public void paint(Graphics g) {
+             
+if (image != null) {
+            
+g.drawImage(image, 100, 100, this);
+        
+}
+}
+
+    
+public static void main(String[] args) {
+            
+DEM3 frame = new DEM3();
+        
+frame.setTitle("Simple Image Display");
+        
+frame.setSize(700, 700);
+        
+frame.setLayout(new FlowLayout());
+
+                    
+Button displayButton = new Button("Show Image");
+        
+frame.displayButton = displayButton;
+        
+displayButton.addActionListener(frame);
+        
+             
+frame.add(displayButton);
+
+             
+frame.setVisible(true);
+    
+}
+}
+
+
+
+
+</pre></code><img src="DEM3output.png" alt="output image"> </main>
+    <footer>
+        <p>Tanu Joshi</p>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,74 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>W3Schools Inspired Website</title>
+    <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+    <header>
+        <h1>Java Programs</h1>
+        <nav>
+            <ul>
+                <li><a href="../2D Array/2darray.html">2D Array</a></li>
+                    <li><a href="../applet/applet.html">Applet</a></li>
+                    <li><a href="../basic programs/basic.html">Basic Programs</a></li>
+                    <li><a href="../data conversion/data_conversion.html">Data Conversion</a></li>
+                    <li><a href="../event model/event.html">Event Model</a></li>
+                    <li><a href="../exceptions/excption.html">Exceptions</a></li>
+                    <li><a href="../functions/function.html">Functions</a></li>
+                    <li><a href="../GUI(AWT)/gui.html">GUI(AWT)</a></li>
+                    <li><a href="../inheritance/inheritance.html">Inheritance</a></li>
+                    <li><a href="../input-output/io.html">I/O</a></li>
+                    <li><a href="../interface/interface.html">Interface</a></li>
+                    <li><a href="../jdbc/jdbc.html">JDBC</a></li>
+                    <li><a href="../MultiThreading/mt.html">MultiThreading</a></li>
+                    <li><a href="../oops/oops.html">OOPs</a></li>
+                    <li><a href="../packages/packages.html">Package</a></li>
+                    <li><a href="../single array/sa.html">Single Array</a></li>
+                    <li><a href="../strings/string.html">Strings</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <code><pre>
+
+import java.awt.*;
+import java.awt.event.*;
+
+public class DEM9 {
+    public static void main(String[] args) {
+        Frame frame1 = new Frame("Frame 1");
+        frame1.setSize(300, 200);
+        frame1.setLayout(new FlowLayout());
+        Button switchToFrame2 = new Button("Go to Frame 2");
+        frame1.add(switchToFrame2);
+        Frame frame2 = new Frame("Frame 2");
+        frame2.setSize(300, 200);
+        frame2.setLayout(new FlowLayout());
+        Button switchToFrame1 = new Button("Go to Frame 1");
+        frame2.add(switchToFrame1);
+        switchToFrame2.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e) {
+                frame1.setVisible(false);
+                frame2.setVisible(true);
+            }
+        });
+        switchToFrame1.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e) {
+                frame2.setVisible(false);
+                frame1.setVisible(true);
+            }
+        });
+        frame1.setVisible(true);
+        frame2.setVisible(false);
+    }
+}
+</pre></code><img src="DEM9output.png" alt="output image"> </main>
+    <footer>
+        <p>Tanu Joshi</p>
+    </footer>
+</body>
+</html>

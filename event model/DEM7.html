@@ -1,0 +1,74 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>W3Schools Inspired Website</title>
+    <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+    <header>
+        <h1>Java Programs</h1>
+        <nav>
+            <ul>
+                <li><a href="../2D Array/2darray.html">2D Array</a></li>
+                    <li><a href="../applet/applet.html">Applet</a></li>
+                    <li><a href="../basic programs/basic.html">Basic Programs</a></li>
+                    <li><a href="../data conversion/data_conversion.html">Data Conversion</a></li>
+                    <li><a href="../event model/event.html">Event Model</a></li>
+                    <li><a href="../exceptions/excption.html">Exceptions</a></li>
+                    <li><a href="../functions/function.html">Functions</a></li>
+                    <li><a href="../GUI(AWT)/gui.html">GUI(AWT)</a></li>
+                    <li><a href="../inheritance/inheritance.html">Inheritance</a></li>
+                    <li><a href="../input-output/io.html">I/O</a></li>
+                    <li><a href="../interface/interface.html">Interface</a></li>
+                    <li><a href="../jdbc/jdbc.html">JDBC</a></li>
+                    <li><a href="../MultiThreading/mt.html">MultiThreading</a></li>
+                    <li><a href="../oops/oops.html">OOPs</a></li>
+                    <li><a href="../packages/packages.html">Package</a></li>
+                    <li><a href="../single array/sa.html">Single Array</a></li>
+                    <li><a href="../strings/string.html">Strings</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <code><pre>
+
+import java.awt.*;
+import java.awt.event.*;
+
+public class DEM7 extends Frame {
+    public static void main(String[] args) {
+        Frame frame = new Frame("Checkbox Example");
+        Checkbox checkbox = new Checkbox("Enable Option");
+        Button getStateButton = new Button("Get State");
+        Button setStateButton = new Button("Set State");
+        Label label = new Label("Checkbox is unchecked");
+        getStateButton.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e) {
+                boolean isSelected = checkbox.getState();
+                label.setText("Checkbox is " + (isSelected ? "checked" : "unchecked"));
+            }
+        });
+        setStateButton.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e) {
+                checkbox.setState(!checkbox.getState());
+                label.setText("Checkbox is " + (checkbox.getState() ? "checked" : "unchecked"));
+            }
+        });
+        frame.setLayout(new FlowLayout());
+        frame.add(checkbox);
+        frame.add(getStateButton);
+        frame.add(setStateButton);
+        frame.add(label);
+        frame.setSize(300, 300);
+        frame.setVisible(true);
+    }
+}
+</pre></code><img src="DEM7output.png" alt="output image"> </main>
+    <footer>
+        <p>Tanu Joshi</p>
+    </footer>
+</body>
+</html>

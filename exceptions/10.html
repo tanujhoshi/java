@@ -1,0 +1,94 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>W3Schools Inspired Website</title>
+    <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+    <header>
+        <h1>Java Programs</h1>
+        <nav>
+            <ul>
+                <li><a href="../2D Array/2darray.html">2D Array</a></li>
+                    <li><a href="../applet/applet.html">Applet</a></li>
+                    <li><a href="../basic programs/basic.html">Basic Programs</a></li>
+                    <li><a href="../data conversion/data_conversion.html">Data Conversion</a></li>
+                    <li><a href="../event model/event.html">Event Model</a></li>
+                    <li><a href="../exceptions/excption.html">Exceptions</a></li>
+                    <li><a href="../functions/function.html">Functions</a></li>
+                    <li><a href="../GUI(AWT)/gui.html">GUI(AWT)</a></li>
+                    <li><a href="../inheritance/inheritance.html">Inheritance</a></li>
+                    <li><a href="../input-output/io.html">I/O</a></li>
+                    <li><a href="../interface/interface.html">Interface</a></li>
+                    <li><a href="../jdbc/jdbc.html">JDBC</a></li>
+                    <li><a href="../MultiThreading/mt.html">MultiThreading</a></li>
+                    <li><a href="../oops/oops.html">OOPs</a></li>
+                    <li><a href="../packages/packages.html">Package</a></li>
+                    <li><a href="../single array/sa.html">Single Array</a></li>
+                    <li><a href="../strings/string.html">Strings</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <code><pre>
+
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.SQLException;
+import java.sql.Statement;
+
+class EH10 {
+    public static void main(String[] args) {
+        Connection connection = null;
+        try {
+            Class.forName("com.mysql.jdbc.Driver");
+            connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/BCA", "root", "root");
+            Statement statement = connection.createStatement();
+
+            String insertQuery = "INSERT INTO student (rollno,name) VALUES (1,'ABCD')";
+            int rowsInserted = statement.executeUpdate(insertQuery);
+            if (rowsInserted == 0) {
+                throw new SQLException("Insert operation failed.");
+            }
+            System.out.println("Insert successful!");
+
+            String updateQuery = "UPDATE student SET name = 'XYZ' WHERE rollno = 1";
+            int rowsUpdated = statement.executeUpdate(updateQuery);
+            if (rowsUpdated == 0) {
+                throw new SQLException("Update operation failed.");
+            }
+            System.out.println("Update successful!");
+
+            String deleteQuery = "DELETE FROM student WHERE rollno = 1";
+            int rowsDeleted = statement.executeUpdate(deleteQuery);
+            if (rowsDeleted == 0) {
+                throw new SQLException("Delete operation failed.");
+            }
+            System.out.println("Delete successful!");
+
+        } catch (ClassNotFoundException e) {
+            System.err.println("JDBC Driver not found: " + e.getMessage());
+        } catch (SQLException e) {
+            System.err.println("SQL operation failed: " + e.getMessage());
+            throw new RuntimeException("Database operation error: " + e.getMessage());
+        } finally {
+            if (connection != null) {
+                try {
+                    connection.close();
+                    System.out.println("Connection closed.");
+                } catch (SQLException e) {
+                    System.err.println("Failed to close connection: " + e.getMessage());
+                }
+            }
+        }
+    }
+}
+</pre></code><img src="10output.png" alt="output image"> </main>
+    <footer>
+        <p>Tanu Joshi</p>
+    </footer>
+</body>
+</html>
